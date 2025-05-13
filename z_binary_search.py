@@ -27,3 +27,7 @@ verify(result)
 
 result = binary_search(numbers, 6)
 verify(result)
+
+"""
+O(log n)
+"""

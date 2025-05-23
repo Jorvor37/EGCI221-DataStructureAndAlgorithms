@@ -47,6 +47,50 @@ class LinkedList:
         new_node.next_node = self.head
         self.head = new_node
 
+    def search(self, key):
+        """
+        Search for the first node containing data that matches the key
+        Return the node or None if not found
+        Takes O(n) time
+        """
+        current = self.head
+
+        while current != None:
+            if current.data == key:
+                return current
+            current = current.next_node
+
+        return None
+
+    def insert(self, data, index):
+        """
+        Insert a new Node containing data at index position
+        Insertion takes O(1) time but finding tje node at
+        the insertion point takes O(n) time
+
+        constant time operation
+        Takes O(n) time 
+        """
+        if index == 0:
+            self.add(data)
+            
+        if index > 0:
+            new = Node(data)
+
+            position = 0
+            current = self.head
+
+            while position > 1:
+                current = node.next_node
+                position -= 1
+            
+            prev = current
+            next_node = current.next_node
+
+            prev.next_node = new
+            new.next_node = next_node
+
+
     def __repr__(self):
         """
         Return a string representation of the list
@@ -64,6 +108,7 @@ class LinkedList:
                 nodes.append("[%s]" % current.data)
 
             current = current.next_node
+        return "->".join(nodes)
 
     
 """

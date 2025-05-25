@@ -90,6 +90,34 @@ class LinkedList:
             prev.next_node = new
             new.next_node = next_node
 
+    def remove(self, key):
+        """
+        remove node contaning data that matches the key
+        Retuens the moce or None if key  doesn't exist
+        Takes O(n) time
+
+        linked is a good place to just study
+        there's much more efficient method.
+        """
+        current = self.head
+        previous = None
+        found = False
+
+        while current and not found:
+            #key is head node (number that we want to remove is head)
+            if current.data == key and current is self.head:
+                found = True
+                self.head = current.next_node
+            #if current data is ket (number that we want to remove is this node)
+            elif current.data == key:
+                found = True
+                previous.next_node = current.next_node
+            #no data that matches the key
+            else:
+                previous = current
+                current = current.next_node
+
+        return current
 
     def __repr__(self):
         """

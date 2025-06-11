@@ -10,8 +10,6 @@ Original file is located at
 print("Hello World")
 #Connect colab to GGDrive
 
-!ls #!wget !git clone
-
 a = 10
 
 print(a)
@@ -178,4 +176,3 @@ def f(n):
 
 n = int(input("Please input number : "))
 f(n)
-
